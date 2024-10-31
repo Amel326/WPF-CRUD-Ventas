@@ -1,0 +1,84 @@
+﻿<Window x:Class="DAO_.WindowAdminUsuario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DAO_"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="WindowAdminUsuario" Height="450" Width="1000"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStyle="None" WindowStartupLocation="CenterScreen" BorderThickness="2" BorderBrush="#201746"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2">
+            <Grid Background="#00806C" Height="30" VerticalAlignment="Top">
+                <Button x:Name="btnClose" VerticalAlignment="Top" HorizontalAlignment="Right" Background="{x:Null}" Height="30" Width="30" Padding="0" Click="btnClose_Click">
+                    <materialDesign:PackIcon Kind="CloseBoxesOutline" Foreground="White" Height="30" Width="30"/>
+                </Button>
+            </Grid>
+            <TextBlock Text="ADMINISTRADOR DE TIPO DE CUENTAS" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#201746" FontSize="20" FontWeight="Bold" Margin="10"/>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Margin="10 70 10 10">
+            <StackPanel Orientation="Horizontal" Margin="0 2">
+                <TextBlock Text="Carnet de Identidad:" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" Margin="5"/>
+                <TextBox x:Name="txtCi" Width="180" Margin="5"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0 2">
+                <TextBlock Text="Nombres:" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" Margin="5"/>
+                <TextBox x:Name="txtNombres" Width="180" Margin="5"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0 2">
+                <TextBlock Text="Apellido Paterno:" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" Margin="5"/>
+                <TextBox x:Name="txtApellidoPaterno" Width="180" Margin="5"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0 2">
+                <TextBlock Text="Apellido Materno:" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" Margin="5"/>
+                <TextBox x:Name="txtApellidoMaterno" Width="180" Margin="5"/>
+            </StackPanel>
+            
+
+            <StackPanel Orientation="Horizontal" Margin="0 2">
+                <TextBlock Text="Rol:" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" Margin="5"/>
+                <ComboBox x:Name="txtRol" Width="180" Margin="5">
+                    <ComboBoxItem Content="Administrador"/>
+                    <ComboBoxItem Content="Cajero"/>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0 2">
+                <TextBlock Text="Sexo:" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" Margin="5"/>
+                <ComboBox x:Name="txtSexo" Width="180" Margin="5">
+                    <ComboBoxItem Content="M"/>
+                    <ComboBoxItem Content="F"/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 2">
+                <TextBlock Text="Fecha de Nacimiento:" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" Margin="5"/>
+                <DatePicker x:Name="datePicker" Width="180" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <DataGrid x:Name="dgvData" Margin="0" IsReadOnly="True" CanUserAddRows="False" Loaded="dgvData_Loaded" SelectionChanged="dgvData_SelectionChanged"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 10">
+            <Button x:Name="btnInsertar" Content="Insertar" Width="100" Margin="10" Background="#00EBC7" Click="btnInsertar_Click"/>
+            <Button x:Name="btnModificar" Content="Modificar" Width="100" Margin="10" Background="#00EBC7" Click="btnModificar_Click"/>
+            <Button x:Name="btnEliminar" Content="Eliminar" Width="100" Margin="10" Background="#00EBC7" Click="btnEliminar_Click"/>
+            <Button x:Name="btnGuardar" Content="Guardar" Width="100" Margin="10" Background="#00EBC7" IsEnabled="False" Click="btnGuardar_Click"/>
+            <Button x:Name="btnCancelar" Content="Cancelar" Width="100" Margin="10" Background="#00EBC7" IsEnabled="False" Click="btnCancelar_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
